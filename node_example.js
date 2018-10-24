@@ -36,8 +36,8 @@ var server = http.createServer(function (request, response) {
 
   if(data[0]=='/fibonacci'){
     var n1 = 0;
-        var n2 = 1;
-        var n3;
+    var n2 = 1;
+    var n3;
     var input = data[1].split('&')
     input.forEach(function(data){
       var num2 = Number(data.split('=')[1])
