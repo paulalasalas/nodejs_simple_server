@@ -31,7 +31,7 @@ var server = http.createServer(function (request, response) {
       var num = Number(data.split('=')[1])
       m *= num
     })
-    response.end("La multiplicacion es: " + m)
+    response.end("El resultado de la multiplicacion es: " + m)
   }
 
   if(data[0]=='/fibonacci'){
@@ -47,7 +47,7 @@ var server = http.createServer(function (request, response) {
         n2 = n3;
       }
     })
-    response.end("La sucesion de Fibonacci es: " + n3)
+    response.end("La sucesion es: " + n3)
   }
 })
 
