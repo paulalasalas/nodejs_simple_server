@@ -23,6 +23,32 @@ var server = http.createServer(function (request, response) {
     response.writeHead(200, {'Content-Type': 'application/json'})
     response.end(JSON.stringify({result:suma}))
   }
+
+  if(data[0]=='/multiplicacion'){
+    m = 1
+    var input = data[1].split('&')
+    input.forEach(function(data){
+      var num = Number(data.split('=')[1])
+      m *= num
+    })
+    response.end("La multiplicacion es: " + m)
+  }
+
+  if(data[0]=='/fibonacci'){
+    var n1 = 0;
+        var n2 = 1;
+        var n3;
+    var input = data[1].split('&')
+    input.forEach(function(data){
+      var num2 = Number(data.split('=')[1])
+      for(var i=1; i<num2; i++){
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+      }
+    })
+    response.end("La sucesion de Fibonacci es: " + n3)
+  }
 })
 
 /**
